@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@drawable/login_background">
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, World!"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="16dp"/>
+        android:layout_below="@id/buttonSubmit"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/editTextCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadź nazwę miasta"
+        android:inputType="text"
+        android:textColor="@color/white"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Me!"
-        android:textSize="30sp"
-        android:layout_below="@id/textView"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@id/editTextCity"
+        android:layout_marginTop="16dp"
+        android:text="Pokaż dane" />
+
 </RelativeLayout>
