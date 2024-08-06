@@ -1,33 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonSubmit"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:textColor="@color/white"/>
-
     <EditText
         android:id="@+id/editTextCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Wprowadź nazwę miasta"
-        android:inputType="text"
+        android:hint="@string/enter_city_name"
+        android:textColorHint="@color/teal_700"
+        android:layout_alignParentTop="true"
+        android:padding="16dp"
+        android:imeOptions="actionDone"
         android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/buttonSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Fetch Weather"
         android:layout_below="@id/editTextCity"
-        android:layout_marginTop="16dp"
-        android:text="Pokaż dane" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
 
+    <Button
+        android:id="@+id/buttonLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Location"
+        android:layout_below="@id/buttonSubmit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/buttonLoc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"/>
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textViewResult"
+        android:layout_marginTop="200dp"/>
 </RelativeLayout>

@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">MyFirstApp</string>
-    <string name="hello_world">Hello, World!</string>
-    <string name="welcome_message">Welcome to MyFirstApp!</string>
+    <string name="enter_city_name">Enter city name</string>
+    <string name="check_weather">Check Weather</string>
+    <string name="get_location_weather">Get Location Weather</string>
+    <string name="failed_to_get_location">Failed to get location</string>
+    <string name="failed_to_get_city_name">Failed to get city name</string>
+    <string name="failed_to_get_weather_data">Failed to get weather data: %1$s</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="weather_info">City: %1$s\nCountry: %2$s\nTemperature: %3$d\nHumidity: %4$d\nDescription: %5$s</string>
 </resources>
