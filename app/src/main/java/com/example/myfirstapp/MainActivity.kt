@@ -175,24 +175,30 @@ class MainActivity : AppCompatActivity() {
 
         weatherRepository.getWeatherData(cityName, apiKey) { result ->
             result.onSuccess { weatherResponse ->
-                val weatherInfo = getString(
-                    R.string.weather_info,
-                    weatherResponse.location.name,
-                    weatherResponse.location.country,
-                    weatherResponse.current.temperature,
-                    weatherResponse.current.humidity,
-                    weatherResponse.current.weather_descriptions[0]
-                )
-                map.controller.setZoom(15.0)
-                val startPoint = GeoPoint(weatherResponse.location.lat, weatherResponse.location.lon)
-                map.controller.setCenter(startPoint)
+                try {
+                    val weatherInfo = getString(
+                        R.string.weather_info,
+                        weatherResponse.location.name,
+                        weatherResponse.location.country,
+                        weatherResponse.current.temperature,
+                        weatherResponse.current.humidity,
+                        weatherResponse.current.weather_descriptions[0]
+                    )
 
-                val startMarker = Marker(map)
-                startMarker.position = startPoint
-                startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-                map.overlays.add(startMarker)
+                    map.controller.setZoom(15.0)
+                    val startPoint =
+                        GeoPoint(weatherResponse.location.lat, weatherResponse.location.lon)
+                    map.controller.setCenter(startPoint)
 
-                textViewResult.text = weatherInfo
+                    val startMarker = Marker(map)
+                    startMarker.position = startPoint
+                    startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+                    map.overlays.add(startMarker)
+
+                    textViewResult.text = weatherInfo
+                }catch (e: Exception){
+                    textViewResult.text = getString(R.string.failed_to_get_weather_data)
+                }
             }.onFailure { exception ->
                 textViewResult.text = getString(R.string.failed_to_get_weather_data, exception.message)
             }

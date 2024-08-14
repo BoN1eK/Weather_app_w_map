@@ -6,6 +6,7 @@
 
     <EditText
         android:id="@+id/editTextCity"
+        android:autofillHints="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_city_name"
@@ -37,7 +38,7 @@
         android:id="@+id/textViewResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="/\"
         android:layout_below="@id/buttonLoc"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
